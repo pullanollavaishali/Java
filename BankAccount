@@ -1,0 +1,60 @@
+class BankAccount {
+    private String accountType;
+    private double balance;
+
+   
+    public BankAccount(String accountType) {
+        this.accountType = accountType;
+        this.balance = 0.0;
+    }
+
+    public BankAccount(String accountType, double initialBalance) {
+        this.accountType = accountType;
+        this.balance = initialBalance;
+    }
+
+    
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited $" + amount + " into " + accountType + " account");
+    }
+
+   
+    public void deposit(double amount, String depositType) {
+        balance += amount;
+        System.out.println("Deposited $" + amount + " by " + depositType + " into " + accountType + " account");
+    }
+
+    
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println("Withdrawn $" + amount + " from " + accountType + " account");
+        } else {
+            System.out.println("Insufficient funds in " + accountType + " account");
+        }
+    }
+
+    
+    public void checkBalance() {
+        System.out.println("Current balance in " + accountType + " account: $" + balance);
+    }
+}
+
+public class BankAccountManager {
+    public static void main(String[] args) {
+        BankAccount savingsAccount = new BankAccount("Savings");
+        BankAccount checkingAccount = new BankAccount("Checking", 500.0);
+
+        savingsAccount.deposit(100.0);
+        savingsAccount.deposit(50.0, "cash");
+        savingsAccount.checkBalance();
+        savingsAccount.withdraw(30.0);
+        savingsAccount.checkBalance();
+
+        checkingAccount.deposit(200.0, "check");
+        checkingAccount.checkBalance();
+        checkingAccount.withdraw(600.0);
+        checkingAccount.checkBalance();
+    }
+}
