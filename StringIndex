@@ -1,0 +1,10 @@
+class StringIndex
+{
+public static void main(String args[])
+{
+StringBuffer str=new StringBuffer("banana");
+System.out.println(str);
+
+System.out.println(str.indexOf("a"));
+}
+}
