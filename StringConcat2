@@ -1,0 +1,14 @@
+import java.util.*;
+class StringConcat2
+{
+public static void main(String args[])
+{
+String name,name1,name2;
+Scanner sc=new Scanner(System.in);
+name=sc.next();
+name1=sc.next();
+name2=name+name1;
+System.out.println( "concatenated string" + name2);
+}
+
+}
