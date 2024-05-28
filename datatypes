@@ -1,0 +1,47 @@
+class DataTypes
+
+{
+
+public static void main(String args[])
+
+{
+
+int a = 6
+
+byte b = 4
+
+short c = 20
+
+long d = 4000l
+
+float e = 3.14f
+
+double f=70.2;
+
+charg g=^ prime v'
+
+boolean h=true;
+
+String i = vyshu";
+
+System.out.println("integer value " + a);
+
+System.out.println("byte value "+ b ;
+
+System.out.println("short value "+ c);
+
+System.out.println("long value" + d);
+
+System.out.println("float value "+ e);
+
+System.out.println("double value" +f);
+
+System.out.println("char value "+g);
+
+System.out.println("boolean value "+ h);
+
+System.out.println("string value" +i);
+
+}
+
+}
