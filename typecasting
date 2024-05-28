@@ -1,0 +1,18 @@
+public class TypeCasting {
+    public static void main(String[] args) {
+        // Implicit Type Casting
+        int numInt = 10;
+        long numLong = numInt; 
+        System.out.println("After Implicit Casting:");
+        System.out.println("Integer: " + numInt);
+        System.out.println("Long: " + numLong);
+
+        // Explicit Type Casting
+        double numDouble = 13.45;
+        int numIntExplicit = (int) numDouble; 
+
+        System.out.println("\nAfter Explicit Casting:");
+        System.out.println("Double: " + numDouble);
+        System.out.println("Integer (after explicit casting): " + numIntExplicit);
+    }
+}
