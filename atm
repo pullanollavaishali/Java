@@ -1,0 +1,32 @@
+package bank;
+
+public class Account {
+    protected double balance;
+
+    public Account(double balance) {
+        this.balance = balance;
+    }
+
+    protected void displayBalance() {
+        System.out.println("Balance: " + balance);
+    }
+}
+package atm;
+
+import bank.Account;
+
+public class ATM1 extends Account {
+    public ATM1(double balance) {
+        super(balance);
+    }
+
+    public void checkBalance() {
+        // Accessing the protected method and field from the superclass Account
+        displayBalance();
+    }
+
+    public static void main(String[] args) {
+        ATM atm = new ATM(2000.00);
+        atm.checkBalance();  // This will print the balance
+    }
+}
