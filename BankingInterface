@@ -1,0 +1,88 @@
+interface BankingInterface
+{
+ void deposit(double amount);
+ void withdraw(double amount);
+ double getBalance();
+}
+
+//Implement SavingsAccount class
+class SavingsAccount implements BankingInterface
+{
+ private double balance;
+
+ @Override
+ public void deposit(double amount)
+ {
+     balance += amount;
+ }
+
+ @Override
+ public void withdraw(double amount)
+ {
+     if (balance >= amount)
+     {
+         balance -= amount;
+     }
+     else
+     {
+         System.out.println("Insufficient funds for withdrawal!");
+     }
+ }
+
+ @Override
+ public double getBalance()
+ {
+     return balance;
+ }
+}
+
+//Implement CurrentAccount class
+class CurrentAccount implements BankingInterface 
+{
+ private double balance;
+
+ @Override
+ public void deposit(double amount)
+ {
+     balance += amount;
+ }
+
+ @Override
+ public void withdraw(double amount)
+ {
+     if (balance >= amount)
+     {
+         balance -= amount;
+     }
+     else
+     {
+         System.out.println("Insufficient funds for withdrawal!");
+     }
+ }
+
+ @Override
+ public double getBalance()
+ {
+     return balance;
+ }
+}
+
+public class Banking
+{
+ public static void main(String[] args)
+ {
+     // Create a SavingsAccount object
+     SavingsAccount savingsAccount = new SavingsAccount();
+     // Deposit and withdraw from the savings account
+     savingsAccount.deposit(10000);
+     savingsAccount.withdraw(5000);
+     System.out.println("Savings Account Balance: " + savingsAccount.getBalance());
+
+     // Create a CurrentAccount object
+     CurrentAccount currentAccount = new CurrentAccount();
+     // Deposit and withdraw from the current account
+     currentAccount.deposit(2500);
+     currentAccount.withdraw(1000);
+     System.out.println("Current Account Balance: " + currentAccount.getBalance());
+ }
+}
